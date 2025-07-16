@@ -32,9 +32,16 @@ for i in range(len(hours)):
 
 x_fine = np.linspace(0, 9, 100)
 curve = a * x_fine**2 + b * x_fine + c
+x_fine = np.linspace(0, 9, 100)
+curve = a * x_fine**2 + b * x_fine + c
 
-plt.plot(x_fine, curve, label="Theoretical Prediction", color='red', linestyle='--')
-plt.scatter(x, actual_temps, color='blue', label="Actual Temperature", zorder=5)
+plt.plot(x_fine, curve, label="Theoretical Prediction", color='red', linestyle='solid')
+
+theoretical_points_x = known_times
+theoretical_points_y = known_temps
+plt.scatter(theoretical_points_x, theoretical_points_y, color='red', s=80, label="Theoretical Input Points", zorder=5)
+
+plt.plot(x, actual_temps, color='blue', label="Actual Temperature", marker='o')
 
 time_labels = [format_hour(hr) for hr in hours]
 plt.xticks(ticks=x, labels=time_labels, rotation=45)
