@@ -1,33 +1,76 @@
-1. Requirements Analysis and Specification:
-•	Define the scope:
-Clearly define the objectives of the weather model. For example, predicting temperature, humidity, or rainfall.
-•	Gather inputs:
-Identify the necessary weather parameters (temperature, humidity, wind speed, etc.) and their data sources.
-•	Determine accuracy requirements:
-Define the desired level of accuracy for the predictions.
-•	Specify output format:
-Determine how the model's output will be presented (e.g., hourly forecasts, daily summaries).
-•	Document requirements:
-Create a Software Requirements Specification (SRS) document outlining all the above. 
-2. Design:
-•	System Architecture:
-Design the overall structure of the weather modeling system, including data input, processing, and output components.
-•	Quadratic Model Design:
-Develop the specific mathematical equations for the quadratic model. This includes defining the coefficients and how they relate to the input parameters.
-•	Data Handling:
-Design how the input data will be processed (cleaning, scaling, etc.) and how the model's output will be stored.
-•	User Interface:
-Design how the user will interact with the system (e.g., a graphical interface for input and output). 
-3. Implementation:
-•	Coding: Translate the design into actual code using a suitable programming language (e.g., Python, R).
-•	Unit Testing: Test individual components or modules of the code to ensure they function correctly.
-•	Integration: Combine the different modules into a cohesive system. 
-4. Testing and Integration:
-•	System Testing: Test the entire system to ensure it meets the requirements defined in the SRS.
-•	Verification: Verify that the model's predictions are accurate and reliable. This involves comparing the model's output with real-world weather data.
-•	User Acceptance Testing (UAT): Allow users to test the system and provide feedback. 
-5. Deployment and Maintenance: 
-•	Deployment:
-Deploy the system to the intended environment (e.g., a server, a cloud platform).
-•	Maintenance:
-Regularly monitor the system's performance and make necessary updates or bug fixes. 
+1. Requirements Analysis and Specification
+
+    Define the scope:
+    Build a model to predict daily temperatures using a quadratic function.
+    Compare predictions with real, observed temperature data.
+
+    Gather inputs:
+    Input includes realistic hourly temperatures from 6 AM to 8 PM.
+    Data is used to fit and validate the model.
+
+    Determine accuracy requirements:
+    The model should peak around noon and follow realistic daily trends.
+    Accuracy is visually verified against actual data.
+
+    Specify output format:
+    Outputs include a printed table and a plotted graph.
+    The graph compares predicted and actual temperature values.
+
+    Document requirements:
+    Requirements can be compiled into an SRS document.
+    This outlines inputs, outputs, and accuracy goals.
+2. Design
+
+    System Architecture:
+    The system includes data input, quadratic modeling, and output display.
+    All components are contained in one script.
+
+    Quadratic Model Design:
+    A 2nd-degree polynomial fits temperatures at 6 AM, 12 PM, and 6 PM.
+    Coefficients are calculated using NumPy.
+
+    Data Handling:
+    Time and temperature data are processed as arrays.
+    Values are cleaned and mapped evenly from 6 AM to 8 PM.
+
+    User Interface:
+    Uses Matplotlib to generate a labeled temperature plot.
+    Users can easily compare predicted and real values.
+
+3. Implementation
+
+    Coding:
+    Python code uses NumPy for math and Matplotlib for plotting.
+    It calculates predictions and displays results visually.
+
+    Unit Testing:
+    Verified theoretical temperatures and correct plot labels.
+    Ensured model logic is functioning as expected.
+
+    Integration:
+    Combined data processing, modeling, and plotting into one flow.
+    Script runs as a complete working system.
+
+4. Testing and Integration
+
+    System Testing:
+    Tested full script execution and correct curve plotting.
+    Checked that the output matches the expected trend.
+
+    Verification:
+    Compared model output with actual data for validation.
+    Confirmed that peak occurs near 12 NOON.
+
+    User Acceptance Testing (UAT):
+    The clear graph helps users verify accuracy easily.
+    Visual presentation supports user understanding.
+
+5. Deployment and Maintenance
+
+    Deployment:
+    Can run on any local machine with Python installed.
+    Easily extendable for web deployment if needed.
+
+    Maintenance:
+    Data and logic can be updated as needed.
+    Structure allows for quick adjustments or upgrades.
